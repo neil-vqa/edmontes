@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     fetchFeatures() {
-      this.$axios.get('/features.json').
+      this.$axios.get('https://edmontes.netlify.app/features.json').
       then(res => {
         this.pics = res.data;
       });
