@@ -5,13 +5,13 @@
     :loop="true" 
     :paginationPadding="2" 
     class="flex flex-col justify-center items-center w-full h-full">
-    <slide v-for="(pic, index) in imgList" :key="index" class="flex flex-col justify-center items-center w-full h-full">
+    <slide v-for="(item, index) in imgList" :key="index" class="flex flex-col justify-center items-center w-full h-full">
       <div class="relative">
-        <img :src="pic" alt="" class="featured object-contain ">
+        <img :src="item.image" alt="" class="featured object-contain ">
         <div class="opacity-0 hover:opacity-100 transition duration-500 absolute top-0 left-0 w-full h-full">
           <article class="flex flex-col justify-center items-center bg-white bg-opacity-50 h-full px-20">
-            <h1 class="text-xl font-bold">Lorem ipsum, dolor sit amet consectetur adipisicing.</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, atque harum. Minima adipisci ab laudantium?</p>
+            <h1 class="text-xl font-bold">{{ item.title }}</h1>
+            <p>{{ item.description }}</p>
           </article>
         </div>
       </div>

@@ -16,9 +16,25 @@
 <script>
 
 export default {
+  // async asyncData({ $content }) {
+	// 	const pics = await $content("gallery").fetch();
+		
+	// 	return { pics };
+	// },
   data() {
     return {
-      pics: ['/sample/hyojoo.jpg','/sample/nana.jpg','/sample/jihyo.jpg']
+      pics: null
+    }
+  },
+  created() {
+    this.fetchFeatures();
+  },
+  methods: {
+    fetchFeatures() {
+      this.$axios.get('/features.json').
+      then(res => {
+        this.pics = res.data;
+      });
     }
   }
 }
