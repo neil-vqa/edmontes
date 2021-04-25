@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'edmontes',
+    title: 'ED Photography | Edison Montes',
     htmlAttrs: {
       lang: 'en'
     },
@@ -46,7 +46,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: process.env.BASE_URL_API
+  },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
@@ -65,5 +67,10 @@ export default {
       'Suranna': true,
       Quicksand: [300, 400, 500]
     },
+  },
+
+  // Environment variables to be used for components
+  env: {
+    sourceURL: process.env.BASE_URL_API
   },
 }
